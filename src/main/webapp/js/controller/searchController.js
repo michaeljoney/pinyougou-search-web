@@ -96,9 +96,13 @@ app.controller("searchController",function ($scope,$location,searchService) {
     }
 
     $scope.loadKeywords=function () {
+
         $scope.searchMap.keywords=$location.search()['keywords'];
        // alert("$scope.searchMap.keywords是："+$scope.searchMap.keywords)
-        $scope.search();
+
+        if($scope.searchMap.keywords !=nul) {
+            $scope.search();
+        }
     }
 
 });
